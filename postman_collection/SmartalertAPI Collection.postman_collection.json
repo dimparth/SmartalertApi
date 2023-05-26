@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "c7483d3b-5f0f-4cd1-a191-9bb25ca25501",
+		"name": "SmartalertAPI Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "testuser",
+							"type": "default"
+						},
+						{
+							"key": "Pass",
+							"value": "123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/users/authenticate",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users",
+						"authenticate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdHVzZXIiLCJuYmYiOjE2NjU2NzgyNDMsImV4cCI6MTY2NTY4MTg0MywiaWF0IjoxNjY1Njc4MjQzfQ.DF5FcSq5gRdwO1LfVNDJD6daaPQcepWzNJ9HULUhatw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/users",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get All Incidents",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}api/danger",
+							"host": [
+								"{{baseUrl}}api"
+							],
+							"path": [
+								"danger"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"users\": [\n        {\n            \"user\": \"testuser\",\n            \"comments\": \"testcomment\",\n            \"latitude\": \"39.367550\",\n            \"longitude\": \"21.923809\",\n            \"dangerTimestamp\": \"10/13/2022 22:05:50\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"flood\",\n            \"locality\": \"Karditsa\"\n        },\n        {\n            \"user\": \"tests2\",\n            \"comments\": \"testt\",\n            \"latitude\": \"39.367551\",\n            \"longitude\": \"21.923800\",\n            \"dangerTimestamp\": \"10/13/2022 22:04:50\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"flood\",\n            \"locality\": \"Karditsa\"\n        },\n        {\n            \"user\": \"testf2\",\n            \"comments\": \"testt\",\n            \"latitude\": \"39.367552\",\n            \"longitude\": \"21.923802\",\n            \"dangerTimestamp\": \"10/13/2022 22:07:50\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"flood\",\n            \"locality\": \"Karditsa\"\n        },\n        {\n            \"user\": \"ttest22\",\n            \"comments\": \"testt\",\n            \"latitude\": \"39.367555\",\n            \"longitude\": \"21.923804\",\n            \"dangerTimestamp\": \"10/13/2022 22:09:19\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"flood\",\n            \"locality\": \"Karditsa\"\n        },\n        {\n            \"user\": \"ttest22\",\n            \"comments\": \"testfg\",\n            \"latitude\": \"39.367556\",\n            \"longitude\": \"21.923808\",\n            \"dangerTimestamp\": \"10/13/2022 22:09:20\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"fire\",\n            \"locality\": \"Larissa\"\n        },\n        {\n            \"user\": \"ttest3\",\n            \"comments\": \"sad\",\n            \"latitude\": \"39.368673\",\n            \"longitude\": \"21.927917\",\n            \"dangerTimestamp\": \"10/13/2022 01:33:07\",\n            \"imagePath\": \"/-1/1/content://media/external/images/media/63/ORIGINAL/NONE/image/jpeg/419912853\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"fire\",\n            \"locality\": \"Karditsa\"\n        },\n        {\n            \"user\": \"ttest3\",\n            \"comments\": \"wsv\",\n            \"latitude\": \"39.368678\",\n            \"longitude\": \"21.927911\",\n            \"dangerTimestamp\": \"10/13/2022 01:33:07\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"flood\",\n            \"locality\": \"Athina\"\n        },\n        {\n            \"user\": \"ttest3\",\n            \"comments\": \"wsv\",\n            \"latitude\": \"39.368618\",\n            \"longitude\": \"21.927981\",\n            \"dangerTimestamp\": \"10/13/2022 02:33:07\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"fire\",\n            \"locality\": \"Athina\"\n        },\n        {\n            \"user\": \"ttest3\",\n            \"comments\": \"wsv\",\n            \"latitude\": \"39.368918\",\n            \"longitude\": \"21.927881\",\n            \"dangerTimestamp\": \"10/13/2022 03:33:07\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"fire\",\n            \"locality\": \"Thessaloniki\"\n        },\n        {\n            \"user\": \"ttest3\",\n            \"comments\": \"wsv\",\n            \"latitude\": \"39.378918\",\n            \"longitude\": \"21.928881\",\n            \"dangerTimestamp\": \"10/13/2022 03:33:07\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"flood\",\n            \"locality\": \"Thessaloniki\"\n        },\n        {\n            \"user\": \"ttest3\",\n            \"comments\": \"wsv\",\n            \"latitude\": \"39.398918\",\n            \"longitude\": \"21.938881\",\n            \"dangerTimestamp\": \"10/13/2022 03:53:07\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"flood\",\n            \"locality\": \"Volos\"\n        },\n        {\n            \"user\": \"ttest3\",\n            \"comments\": \"wsv\",\n            \"latitude\": \"39.308918\",\n            \"longitude\": \"21.908881\",\n            \"dangerTimestamp\": \"10/13/2022 03:55:07\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"fire\",\n            \"locality\": \"Trikala\"\n        },\n        {\n            \"user\": \"testf2\",\n            \"comments\": \"wsv\",\n            \"latitude\": \"39.308218\",\n            \"longitude\": \"21.908281\",\n            \"dangerTimestamp\": \"10/13/2022 03:25:07\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"fire\",\n            \"locality\": \"Palamas\"\n        },\n        {\n            \"user\": \"testf2\",\n            \"comments\": \"wsv\",\n            \"latitude\": \"39.308318\",\n            \"longitude\": \"21.908381\",\n            \"dangerTimestamp\": \"10/13/2022 04:25:07\",\n            \"imagePath\": \"A\",\n            \"dangerStatus\": \"REVIEW\",\n            \"category\": \"fire\",\n            \"locality\": \"Tirana\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Critical Incidents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/danger/critical",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"danger",
+						"critical"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}api/danger/critical",
+							"host": [
+								"{{baseUrl}}api"
+							],
+							"path": [
+								"danger",
+								"critical"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"category\": \"fire\",\n        \"locality\": \"Athina\",\n        \"count\": \"1\"\n    },\n    {\n        \"category\": \"fire\",\n        \"locality\": \"Karditsa\",\n        \"count\": \"1\"\n    },\n    {\n        \"category\": \"fire\",\n        \"locality\": \"Larissa\",\n        \"count\": \"1\"\n    },\n    {\n        \"category\": \"fire\",\n        \"locality\": \"Palamas\",\n        \"count\": \"1\"\n    },\n    {\n        \"category\": \"fire\",\n        \"locality\": \"Thessaloniki\",\n        \"count\": \"1\"\n    },\n    {\n        \"category\": \"fire\",\n        \"locality\": \"Tirana\",\n        \"count\": \"1\"\n    },\n    {\n        \"category\": \"fire\",\n        \"locality\": \"Trikala\",\n        \"count\": \"1\"\n    },\n    {\n        \"category\": \"flood\",\n        \"locality\": \"Athina\",\n        \"count\": \"1\"\n    },\n    {\n        \"category\": \"flood\",\n        \"locality\": \"Karditsa\",\n        \"count\": \"4\"\n    },\n    {\n        \"category\": \"flood\",\n        \"locality\": \"Thessaloniki\",\n        \"count\": \"1\"\n    },\n    {\n        \"category\": \"flood\",\n        \"locality\": \"Volos\",\n        \"count\": \"1\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Add Sample User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Username",
+							"value": "sampleuser",
+							"type": "default"
+						},
+						{
+							"key": "Pass",
+							"value": "123",
+							"type": "default"
+						},
+						{
+							"key": "Role",
+							"value": "user",
+							"type": "default"
+						},
+						{
+							"key": "FcmToken",
+							"value": "fuiT-7s4T2OCTRPtLZKMfG:APA91bFdNlnt3NL4fsGDI7w99HfAiDtBd5XuqikIHzpMdHd1a-_3rE1pTn7r0XWE6s4NinMwbeMxcXcQkTvOrU0bWKnMVWZSqF9vQ0MRuMuhTzLBUKlnoE20saElemefKA-IT-sHe1s3",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/users",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Sample Incident",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2FtcGxldXNlciIsIm5iZiI6MTY2NTg1NzgyMywiZXhwIjoxNjY1ODYxNDIzLCJpYXQiOjE2NjU4NTc4MjN9.thXaFa1467GQI_32h7FXHD-K0xWHpKSu6_dRulQK2Uw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Username",
+							"value": "sampleuser",
+							"type": "default"
+						},
+						{
+							"key": "Comments",
+							"value": "samplecomment",
+							"type": "default"
+						},
+						{
+							"key": "Latitude",
+							"value": "39.367550",
+							"type": "default"
+						},
+						{
+							"key": "Longitude",
+							"value": "21.923809",
+							"type": "default"
+						},
+						{
+							"key": "DangerTimestamp",
+							"value": "2022-10-31 22:05:50",
+							"type": "default"
+						},
+						{
+							"key": "ImagePath",
+							"value": "samplepath",
+							"type": "default"
+						},
+						{
+							"key": "DangerStatus",
+							"value": "",
+							"type": "default"
+						},
+						{
+							"key": "Category",
+							"value": "flood",
+							"type": "default"
+						},
+						{
+							"key": "Locality",
+							"value": "Karditsa",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/danger",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"danger"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Multiple Sample Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/dev/addusers",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"dev",
+						"addusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Multiple Sample Incidents",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/dev/addincidents",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"dev",
+						"addincidents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/users/update",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notify users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Category",
+							"value": "flood",
+							"type": "default"
+						},
+						{
+							"key": "Locality",
+							"value": "Karditsa",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/danger/notify",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"danger",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Statistics",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7266/",
+			"type": "default"
+		}
+	]
+}

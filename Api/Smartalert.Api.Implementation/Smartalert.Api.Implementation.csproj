@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Encryption\Encryption.csproj" />
+    <ProjectReference Include="..\MySqlConnectionFactory\MySqlConnectionFactory.csproj" />
+    <ProjectReference Include="..\Smartalert.Api.Interfaces\Smartalert.Api.Interfaces.csproj" />
+    <ProjectReference Include="..\Smartalert.Api.Models\Smartalert.Api.Models.csproj" />
+  </ItemGroup>
+
+</Project>

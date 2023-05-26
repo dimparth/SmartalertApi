@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  smartalert.api:
+    image: ${DOCKER_REGISTRY-}smartalertapi
+    build:
+      context: .
+      dockerfile: api/smartalert.api/Dockerfile
+    ports:
+      - 7266:443
+
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: smartalert
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
